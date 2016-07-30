@@ -1,0 +1,10 @@
+{% extends 'base.html'%}
+
+{% block content %}
+	<div class="back">
+		<h1>{{posts.titulo}}</h1>
+		<p> {{posts.cuerpo}} </p>
+		<small><em>{{ post.fecha }}</em></small>
+		<small><em>{{ post.autor }}</em></small>
+	</div>
+{% endblock content %}

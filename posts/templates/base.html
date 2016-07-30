@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Blog Fullstack</title>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+  		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+          
+		<style>
+			.nav{
+				background:black;
+				color: white;
+				text-align: center;
+			}
+			h1, h3{
+				color: #9e9e9e;
+			}
+			.back{
+				background-color: #e0f7fa;
+				width: 90%
+			}
+		</style>
+	</head>
+
+	<body>
+		
+  <nav>
+    <div class="nav-wrapper nav">
+      <a href="{% url 'lista' %}">Blog de Fullstack</a>
+      </ul>
+    </div>
+  </nav>
+       <div class="conteiner" align="center">
+			{% block content %}
+			{% endblock content %}
+		</div>
+	</body>
+</html>
