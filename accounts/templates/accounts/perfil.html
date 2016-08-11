@@ -1,0 +1,17 @@
+{% extends 'base.html'%}
+
+{% block content %}
+	{% if request.user.is_authenticated%}
+		<h1>Bienvenido a tu perfil</h1>
+		<p>Hola {{request.user.first_name}} {{request.user.last_name}}</p>
+		<p>Correo electronico: {{request.user.email}}</p>
+		<p>Fecha de nacimiento: {{request.user.fecha_nacimiento}}</p>
+		<p>Ocupación: {{request.user.ocupacion}}</p>
+		<p>Genero: {{request.user.genero}}</p>
+		<p>Bio: {{request.user.bio}}</p>
+		<p>Estado Civil: {{request.user.civil}}</p>
+	{% else %}
+		<h1>Bienvenido</h1>
+		<p>¿Por que no inicias sesión?</p>
+	{% endif %}
+{% endblock content %}

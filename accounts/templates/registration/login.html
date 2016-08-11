@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<div style="width:90%">
+		{% if form.errors %}
+		<h2>Tu usuario o contraseña no coinciden</h2>
+			{% else %}
+			<form action="{% url 'login' %}" method="post">
+			{% csrf_token %}
+				{{form.as_p}}
+				<input type="hidden" name="next" value="{{next}}">
+				<input type="submit" value="Iniciar Sesión">
+			</form>
+			<br>
+			<small><em>Si aún no tienes sesión puedes crearla <a href="{%url 'registro'%}">aquí</a></em></small>
+		{% endif %}
+	</div>
+{% endblock content %}

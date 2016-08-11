@@ -1,10 +1,12 @@
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
-from posts import views
+from posts import urls as postUrls
+from django.conf import settings
+from accounts import urls as cuentasUrls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', views.Home.as_view(), name="home"),
-    url(r'^blog/$', views.ListView.as_view(), name="lista"),
-    url(r'^blog/(?P<slug>[-\w]+)/$', views.DetailView.as_view(), name="detalle"),
+    #url(r'^$', views.Home.as_view(), name="home"),
+   	url(r'^blog/',include(postUrls,namespace="posts")),
+    url(r'^accounts/',include(cuentasUrls)),
 ]
